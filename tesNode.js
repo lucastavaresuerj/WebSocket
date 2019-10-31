@@ -19,8 +19,11 @@ wss.on('connection', function connection(ws,req) {
 		console.log('received: %s', message);
 		message = JSON.parse(message);
 		//process the request
-		if (message.field== 'getindex'){
+		if (message.tag == 'getindex'){
 			ws.send(JSON.stringify (obj[message.index]));
+		}
+		else if (message.tag == 'getall'){
+			ws.send(JSON.stringify(obj));
 		}
 	});
 });
