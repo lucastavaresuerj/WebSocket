@@ -8,9 +8,9 @@ function lejson(ind) {
         ws.send(JSON.stringify(requestMessage));
     }
     ws.onmessage =function (ev) {
-        var men = JSON.parse(ev.data);
         var demo = document.getElementById('demo');
         try {
+            var men = JSON.parse(ev.data); 
             demo.innerHTML = men.nome;
         }
         catch(e) {
@@ -29,10 +29,10 @@ function leTodoJson() {
         }
         ws.send(JSON.stringify(requestMessage));
     }
-    ws.onmessage =function (ev) {
-        var men = JSON.parse(ev.data);
-        var demo = document.getElementById('demo1');
+    ws.onmessage = function (ev) {
+         = document.getElementById('demo1');
         try {
+            var men = JSON.parse(ev.data);
             demo.innerHTML = JSON.stringify(men);
         }
         catch(e) {
