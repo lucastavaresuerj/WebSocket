@@ -20,7 +20,7 @@ wss.on('connection', function connection(ws,req) {
 		message = JSON.parse(message);
 		//process the request
 		if (message.field== 'getindex'){
-			ws.send(obj[message.index]);
+			ws.send(JSON.stringify (obj[message.index]));
 		}
 	});
 });

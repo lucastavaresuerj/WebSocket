@@ -8,9 +8,10 @@ function lejson(ind) {
         ws.send(JSON.stringify(requestMessage));
     }
     ws.onmessage =function (ev) {
+        var men = JSON.parse(ev.data);
         var demo = document.getElementById('demo');
         try {
-            demo.innerHTML = ev.nome;
+            demo.innerHTML = men.nome;
         }
         catch(e) {
             console.log(e);
