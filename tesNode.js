@@ -9,8 +9,6 @@ console.log(obj[1])
 var serverAdd = "localhost";
 const wss = new WebSocket.Server({ port: 8000,host:serverAdd});
 console.log("Host at: "+serverAdd);
-const min=100;
-const max=3000;
 
 wss.on('connection', function connection(ws,req) {
 	//Funcao que recebe a mensagem do cliente (message) e trata
